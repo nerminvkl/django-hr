@@ -1,0 +1,28 @@
+{% extends "zaposlenici/base.html" %} {% block content %}
+
+<div class="container-fluid">
+  <h3 class="text-center m-4">Uredi uposlenika</h3>
+  {% if success %}
+  <div class="alert alert-success" role="alert">
+    Uspješno ste uredili uposlenika.
+    <a href="{% url 'index' %}" class="alert-link">Nazad na početnu.</a>
+  </div>
+  {% else %}
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          <i class="fa-solid fa-user-pen fa-lg"></i> Uređivanje uposlenika
+        </div>
+        <div class="card-body">
+          <form action="" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Ažuriraj</button>
+            <a href="{% url 'index' %}" class="btn btn-secondary">Prekini</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %} {% endblock %}
