@@ -14,10 +14,4 @@ class Migration(migrations.Migration):
             name='zaposleni',
             options={'verbose_name_plural': 'Zaposleni'},
         ),
-        migrations.AddField(
-            model_name='zaposleni',
-            name='datum_rodjenja',
-            field=models.DateField(default=1),
-            preserve_default=False,
-        ),
     ]
